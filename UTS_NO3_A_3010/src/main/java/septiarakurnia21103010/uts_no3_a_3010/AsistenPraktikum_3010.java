@@ -13,17 +13,22 @@ public class AsistenPraktikum_3010 extends Mahasiswa_3010 implements IPendapatan
     private int jmlPertemuan_3010;
     double totalPendapatan_3010;
     
-    public String getMkAsistensi_3010() {
-        return mkAsistensi_3010;
+    public AsistenPraktikum_3010(String nim_3010,String nama_3010,String jurusan_3010,float ipk_3010,String mkAsistensi_3010,int jmlPertemuan_3010){
+        super(nim_3010,nama_3010,jurusan_3010,ipk_3010);
+        this.jmlPertemuan_3010 = jmlPertemuan_3010;
+        this.mkAsistensi_3010 = mkAsistensi_3010;
     }
     public void setMkAsistensi_3010(String mkAsistensi_3010) {
         this.mkAsistensi_3010 = mkAsistensi_3010;
     }
+    public String getMkAsistensi_3010() {
+        return mkAsistensi_3010;
+    }
+    public void setJmlPertemuan_3010(int jmlPertemuan_3010) {
+        this.jmlPertemuan_3010 = jmlPertemuan_3010;
+    }
     public int getJmlPertemuan_3010() {
         return jmlPertemuan_3010;
-    }
-    public void setJmlPertemuan(int jmlPertemuan_3010) {
-        this.jmlPertemuan_3010 = jmlPertemuan_3010;
     }
     public void tampilDataMhs_3010() {
         System.out.println("NIM                     : " + nim_3010);
@@ -32,10 +37,15 @@ public class AsistenPraktikum_3010 extends Mahasiswa_3010 implements IPendapatan
         System.out.println("IPK                     : " + ipk_3010);
         System.out.println("MK Asistentsi           : " + mkAsistensi_3010);
         System.out.println("Jumlah Pertemuan        : " + jmlPertemuan_3010);
+        System.out.println("--------------------------------------------");
+        System.out.println("Total Pendapatan        : "+ totalPendapatan_3010());
+        System.out.println("");
     }
 
     public double totalPendapatan_3010() {
         totalPendapatan_3010 = jmlPertemuan_3010 * 50000;
         return totalPendapatan_3010;
     }
+
+
 }
